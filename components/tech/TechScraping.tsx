@@ -25,12 +25,12 @@ export const TechScraping: React.FC<TechProps> = ({ data, index }) => {
             </div>
             <div className="p-4 space-y-2 h-[200px] overflow-hidden relative">
                 <div className="opacity-50">root@agent:~# ./init_discovery.sh --target="textiles"</div>
-                <div className="text-[#d3f54c]"> > Initializing Railway Scraper...</div>
-                <div> > Target: Guangzhou Fabric Market</div>
-                <div className="text-blue-400"> > [INFO] Found 412 potential entities</div>
-                <div> > Filtering by "Export License"...</div>
-                <div className="text-[#d3f54c]"> > [SUCCESS] 89 High-Intent Leads identified</div>
-                <div className="opacity-50"> > Enriched data:</div>
+                <div className="text-[#d3f54c]">&gt; Initializing Railway Scraper...</div>
+                <div>&gt; Target: Guangzhou Fabric Market</div>
+                <div className="text-blue-400">&gt; [INFO] Found 412 potential entities</div>
+                <div>&gt; Filtering by "Export License"...</div>
+                <div className="text-[#d3f54c]">&gt; [SUCCESS] 89 High-Intent Leads identified</div>
+                <div className="opacity-50">&gt; Enriched data:</div>
                 <div className="pl-4 opacity-70">
                    {`{`} <br/>
                    &nbsp;&nbsp; "name": "TexCo Ltd", <br/>
