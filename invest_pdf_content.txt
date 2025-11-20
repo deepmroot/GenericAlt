@@ -1,0 +1,376 @@
+<!-- Generic Alternatives – Invest Page PDF Source -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Generic Alternatives — Investment Brief</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;700;800&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet" />
+<style>
+:root{--olive:#282a1e;--acid:#d3f54c;--ivory:#fdfff9;--charcoal:#1a1c14;--light:#f5f5f1;--error:#ef4444;--muted:#9ea28f;}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Manrope',sans-serif;background:var(--olive);color:var(--ivory);line-height:1.5;}
+main{position:relative;z-index:1;}
+.noise{position:fixed;inset:0;background-image:radial-gradient(var(--acid) 2px,transparent 2px);background-size:45px 45px;opacity:.03;pointer-events:none;z-index:0;}
+#download{position:fixed;top:1.75rem;right:1.75rem;padding:0.85rem 2rem;border-radius:999px;font-weight:700;background:var(--acid);color:var(--olive);border:none;cursor:pointer;box-shadow:0 10px 25px rgba(0,0,0,.35);z-index:3;}
+#download:hover{background:var(--ivory);} 
+.section{padding:5rem 1.5rem;position:relative;}
+.section.light{background:var(--ivory);color:var(--olive);border-top-left-radius:4rem;border-top-right-radius:4rem;}
+.section.raised{margin-top:-3.5rem;}
+.section-inner{max-width:1200px;margin:0 auto;display:flex;flex-direction:column;gap:2rem;}
+.serif{font-family:'DM Serif Display',serif;letter-spacing:-0.04em;font-style:italic;}
+.subtitle{letter-spacing:0.35em;text-transform:uppercase;font-size:.75rem;font-weight:800;display:inline-flex;gap:.75rem;align-items:center;}
+.badge{border:1px solid var(--acid);color:var(--acid);padding:.4rem 1rem;border-radius:999px;background:rgba(211,245,76,.08);font-size:.8rem;font-weight:700;letter-spacing:.3em;text-transform:uppercase;}
+.cards{display:grid;gap:1.5rem;}
+.cards.two{grid-template-columns:repeat(auto-fit,minmax(260px,1fr));}
+.cards.three{grid-template-columns:repeat(auto-fit,minmax(220px,1fr));}
+.cards.four{grid-template-columns:repeat(auto-fit,minmax(200px,1fr));}
+.card{border-radius:2rem;padding:2rem;border:1px solid rgba(253,255,249,.15);background:rgba(26,28,20,.75);backdrop-filter:blur(14px);display:flex;flex-direction:column;gap:1rem;}
+.card.light{background:var(--light);border-color:rgba(40,42,30,.12);color:var(--olive);}
+.card.accent{background:var(--acid);color:var(--olive);border-color:var(--olive);}
+.card.outline{background:transparent;border:2px dashed rgba(253,255,249,.3);}
+.card h3{font-size:1.5rem;font-weight:800;}
+.card p{color:rgba(253,255,249,.85);}
+.card.light p{color:rgba(40,42,30,.7);}
+.hero h1{font-size:clamp(3rem,6vw,6rem);line-height:1;}
+.hero p{font-size:1.3rem;color:rgba(253,255,249,.85);max-width:720px;}
+.btn-row{display:flex;flex-wrap:wrap;gap:1rem;}
+.btn{border-radius:999px;font-weight:700;padding:1rem 2.5rem;border:2px solid currentColor;display:inline-flex;gap:.75rem;align-items:center;justify-content:center;cursor:pointer;font-size:1rem;}
+.btn.primary{background:var(--acid);color:var(--olive);border:none;}
+.btn.primary:hover{background:var(--ivory);}
+.btn.outline{color:var(--ivory);}
+.list{display:flex;flex-direction:column;gap:1rem;}
+.list li{display:flex;gap:.75rem;align-items:flex-start;}
+.list strong{display:block;}
+.chart-placeholder{height:260px;border-radius:1.8rem;border:1px dashed rgba(253,255,249,.3);display:flex;align-items:center;justify-content:center;font-weight:600;font-size:1.2rem;color:rgba(253,255,249,.7);}
+.timeline{display:flex;flex-direction:column;gap:2rem;position:relative;padding-left:1rem;}
+.timeline::before{content:"";position:absolute;left:.25rem;top:0;bottom:0;width:2px;background:rgba(253,255,249,.2);}
+.timeline li{padding-left:2rem;position:relative;}
+.timeline li::before{content:"";position:absolute;left:-.3rem;top:.4rem;width:.65rem;height:.65rem;background:var(--acid);border-radius:999px;}
+.table{width:100%;border-collapse:collapse;font-size:1rem;}
+.table th,.table td{padding:.9rem;border-bottom:1px solid rgba(40,42,30,.15);text-align:left;}
+.table th{font-size:.75rem;text-transform:uppercase;letter-spacing:.2em;color:rgba(40,42,30,.6);}
+.table td:first-child{width:30%;font-weight:700;}
+.flex{display:flex;flex-wrap:wrap;gap:1.5rem;}
+.flex>div{flex:1 1 280px;}
+footer{text-align:center;padding:3rem 1.5rem;border-top:1px solid rgba(253,255,249,.1);}
+footer .links{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;margin-bottom:1rem;}
+@media (max-width:768px){.btn-row{flex-direction:column;} .section{padding:4rem 1.25rem;} .cards.two,.cards.three,.cards.four{grid-template-columns:1fr;}}
+@media print{body{background:#fff;color:#000;}#download{display:none;}section{page-break-inside:avoid;}}
+</style>
+</head>
+<body>
+<div class="noise"></div>
+<button id="download">Download PDF</button>
+<main id="pdf-content">
+<section class="section hero">
+  <div class="section-inner">
+    <span class="badge">Distributed Sourcing Platform</span>
+    <h1>We replace the <span class="serif" style="color:var(--acid)">agent</span> with <span class="serif">automation.</span></h1>
+    <p>Generic Alternatives is a distributed sourcing, automation, and logistics enablement platform designed to replace the traditional China-based sourcing agent model with a <strong style="color:var(--acid)">data-driven workflow.</strong></p>
+    <div class="btn-row">
+      <button class="btn primary" data-scroll="#technology">View Technology</button>
+      <button class="btn outline" data-scroll="#services">Automation Logic</button>
+    </div>
+  </div>
+</section>
+<section id="services" class="section light raised">
+  <div class="section-inner">
+    <div>
+      <h2>What We Do</h2>
+      <p style="color:rgba(40,42,30,.7);font-size:1.2rem">We replace the manual sourcing agent with transparency, code, and speed.</p>
+    </div>
+    <div class="cards two">
+      <div class="card dark">
+        <h3>China Sourcing</h3>
+        <p>Direct access to factories in Guangzhou, Haizhu, Liwan, and surrounding manufacturing zones.</p>
+      </div>
+      <div class="card dark">
+        <h3>Product Development</h3>
+        <p>End-to-end prototyping, factory liaison, and technical specification handling.</p>
+      </div>
+      <div class="card dark">
+        <h3>QA & Logistics</h3>
+        <p>Quality checks, packaging consolidation, and global distribution pathways.</p>
+      </div>
+      <div class="card dark">
+        <h3>Cost Optimization</h3>
+        <p>Negotiation, delivered-cost modelling, and supply-chain optimisation to remove hidden margins.</p>
+      </div>
+    </div>
+  </div>
+</section>
+<section id="traction" class="section">
+  <div class="section-inner flex">
+    <div>
+      <span class="badge">Current Traction</span>
+      <h2>Expanding with near-zero overhead</h2>
+      <p>Automation replaces dozens of manual steps, letting us scale pipelines faster than the legacy agent model.</p>
+      <div class="chart-placeholder">Revenue data will populate here</div>
+    </div>
+    <div>
+      <div class="card light">
+        <h3>Active Regions</h3>
+        <ul class="list" style="color:rgba(40,42,30,.8)">
+          <li><strong>United States</strong> real-time sourcing + delivery loops</li>
+          <li><strong>United Kingdom</strong> investor + customer hub</li>
+          <li><strong>Canada</strong> specialty distributors</li>
+          <li><strong>Latin America</strong> outbound focus</li>
+          <li><strong>North Africa</strong> emerging partnerships</li>
+        </ul>
+      </div>
+      <div class="card light">
+        <h3>Strategic Edge</h3>
+        <p>Operating with almost <strong style="background:var(--olive);color:var(--acid);padding:0 .3rem;border-radius:.3rem">zero staff</strong> while outperforming traditional agents.</p>
+      </div>
+    </div>
+  </div>
+</section>
+<section id="technology" class="section">
+  <div class="section-inner">
+    <div>
+      <span class="badge">Engineering Manifesto</span>
+      <h2>Built, not <span class="serif" style="background:var(--acid);color:var(--olive);padding:0 .6rem;border-radius:1rem">bought</span></h2>
+      <p>We do not rent intelligence. By moving from expensive API wrappers to bare-metal open source infrastructure, we achieved global unit economics.</p>
+    </div>
+    <div class="cards four">
+      <div class="card dark"><h3>AMD MI300</h3><p>State-of-the-art hardware running local inference for voice & text.</p></div>
+      <div class="card light"><h3>Voice Cloning</h3><p>IBM Granite + Emotion2Vec hit human-parity prosody.</p></div>
+      <div class="card light"><h3>Microservices</h3><p>Docker containers replacing expensive SaaS.</p></div>
+      <div class="card accent"><h3>Self-Hosted</h3><p>Jina AI & custom scrapers running on our own metal.</p></div>
+    </div>
+    <div>
+      <h3>Founder timeline</h3>
+      <ol class="timeline">
+        <li><strong>Feb 2025 — Panama → Philippines</strong><br/>Built MCP tooling and Jina-v4 ingestion for AMAI.</li>
+        <li><strong>Apr 2025 — Taipei</strong><br/>Realised the stack needed to be modular while rescuing Fitexto.</li>
+        <li><strong>Jun 2025 — Hanoi</strong><br/>Met Paul, saw 0k invoices and knew agents would be automated.</li>
+        <li><strong>Aug 2025 — Hanoi → China</strong><br/>Ground deployments proved the same automation can power any factory.</li>
+        <li><strong>Oct 2025 — Guangzhou</strong><br/>Bills of lading + outbound data became our discovery engine.</li>
+        <li><strong>Nov 2025 — Global</strong><br/>Every new ingestion proves non-automated agents will be replaced.</li>
+      </ol>
+    </div>
+  </div>
+</section>
+<section id="pricing" class="section">
+  <div class="section-inner">
+    <span class="badge">Internal Unit Economics</span>
+    <h2>The cost of autonomy</h2>
+    <div class="flex">
+      <div class="card">
+        <h3>AMD MI300X Droplet</h3>
+        <p>Single-instance host for the entire backend stack.</p>
+        <p style="font-size:2.5rem;font-weight:800;color:var(--acid)">.72 / hr</p>
+        <ul class="list">
+          <li><strong>192GB VRAM</strong> Runs Llama-3, VibeVoice, Jina-v4 simultaneously.</li>
+          <li><strong>Partner status</strong> AMD / ROCm access plus fixed inference cost.</li>
+        </ul>
+      </div>
+      <div>
+        <div class="card light">
+          <h3>AWS Support Layer</h3>
+          <p>Amazon EC2/Lambda keep orchestration alive for under /mo.</p>
+        </div>
+        <div class="card light">
+          <h3>Voice Logic</h3>
+          <p>Moved off ElevenLabs and erased ,250/mo. VibeVoice + AudioCraft now handle TTS + foley.</p>
+        </div>
+      </div>
+    </div>
+    <div class="flex">
+      <div class="card">
+        <h3>The agentic employee</h3>
+        <p>It is a scale issue, not an employment issue. Twenty CRM hosts an open-source SDR that nurtures leads faster than humans.</p>
+      </div>
+      <div class="card light">
+        <h3>Cost comparison</h3>
+        <p><strong>Virtual assistant:</strong> 2/hr manual outreach</p>
+        <p><strong>Generic Alternatives:</strong> .72/hr automated nurture</p>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="section">
+  <div class="section-inner">
+    <span class="badge">Technology Stack</span>
+    <h2>Five subsystems of the pipeline</h2>
+    <div class="cards two">
+      <div class="card">
+        <h3>TypeScript Workflows</h3>
+        <ul class="list">
+          <li>Google Maps scraping & enrichment</li>
+          <li>WhatsApp validation via WAHA</li>
+          <li>Twenty CRM pipeline sync</li>
+          <li>Dynamic JSON schemas</li>
+          <li>Custom GPT-powered classifiers</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Twenty CRM Core</h3>
+        <ul class="list">
+          <li>Custom metadata fields</li>
+          <li>Automated enrichment & validation</li>
+          <li>Country routing logic</li>
+          <li>Supplier discovery engine</li>
+          <li>Pipeline scoring algorithms</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Scraping & OSINT</h3>
+        <ul class="list">
+          <li>Facebook / Instagram community discovery</li>
+          <li>Google Maps “QSR” lead scraping</li>
+          <li>GitHub open-source tool scouting</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>AI-Driven Assistants</h3>
+        <ul class="list">
+          <li>Internal product classifiers</li>
+          <li>Automated cost modelling</li>
+          <li>Supplier matching logic</li>
+          <li>Self-updating configurations</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Infrastructure</h3>
+        <ul class="list">
+          <li>Railway-hosted services</li>
+          <li>Dockerised micro-services</li>
+          <li>Custom REST APIs</li>
+          <li>CI/CD for sourcing endpoints</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+<section id="roadmap" class="section light raised">
+  <div class="section-inner">
+    <span class="badge">Roadmap & Model</span>
+    <h2>The disruption of the manual agent</h2>
+    <div class="cards two">
+      <div class="card dark" style="background:var(--charcoal)">
+        <h3>The SaaS Tax</h3>
+        <ul class="list">
+          <li>Voice (ElevenLabs): /bin/bash.18/min</li>
+          <li>Reasoning (GPT-4): 0 / 1M tok</li>
+          <li>Transcription: /bin/bash.006/min</li>
+          <li><strong>Monthly variable:</strong> uncapped</li>
+        </ul>
+      </div>
+      <div class="card accent">
+        <h3>Sovereign Compute</h3>
+        <ul class="list">
+          <li>VibeVoice, Llama 3, Whisper all local</li>
+          <li>Only cost: electricity</li>
+          <li><strong>Monthly fixed:</strong> .72/hr</li>
+        </ul>
+      </div>
+    </div>
+    <table class="table">
+      <thead><tr><th>Feature</th><th>Traditional Agent</th><th>Generic Alternatives</th></tr></thead>
+      <tbody>
+        <tr><td>Margins</td><td>Hidden 10–30% markups</td><td>Transparent pricing. No hidden fees.</td></tr>
+        <tr><td>Communication</td><td>Slow WhatsApp / WeChat loops</td><td>Automated pipelines with instant updates.</td></tr>
+        <tr><td>Documentation</td><td>No persistent paperwork</td><td>Full digital trail with automated quotes & QC lists.</td></tr>
+        <tr><td>Scalability</td><td>Manual labor, hard to scale</td><td>Zero-staff expansion via API workflows.</td></tr>
+      </tbody>
+    </table>
+    <div class="cards two">
+      <div class="card light">
+        <h3>Long-term vision</h3>
+        <ul class="list">
+          <li><strong>Global sourcing pipeline</strong> China → US → UK → LATAM → Africa.</li>
+          <li><strong>Digital agent replacement</strong> Quotes, QC, documentation executed by software.</li>
+          <li><strong>Multi-vertical engine</strong> Industrial pumps, apparel, hospitality, electronics.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Active verticals</h3>
+        <ul class="list">
+          <li><strong>Industrial:</strong> Submersible pumps, VFDs, heavy machinery.</li>
+          <li><strong>Apparel:</strong> Hoodies, faux fur hoods, footwear, embroidery.</li>
+          <li><strong>Hospitality:</strong> Consumables, bowls, plastics.</li>
+          <li><strong>Electronics:</strong> Niche manufacturing, consumer devices.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="cards three">
+      <div class="card dark"><h3>Self-funded</h3><p>Zero external debt. 100% founder equity.</p></div>
+      <div class="card light"><h3>Orders secured</h3><p>Deposits already in the bank; we move metal only when margin is locked.</p></div>
+      <div class="card dark"><h3>Micro-service economics</h3><p>Infrastructure saves money instead of burning it.</p></div>
+    </div>
+  </div>
+</section>
+<section id="invest" class="section">
+  <div class="section-inner">
+    <span class="badge">Pre-seed round open</span>
+    <h2>Shape the future of <span class="serif">global trade</span></h2>
+    <p>Generic Alternatives Limited (NI735578) is a Northern Irish technology company replacing the manual agent model with bare-metal automation.</p>
+    <div class="cards two">
+      <div class="card light">
+        <h3>Global reach</h3>
+        <ul class="list" style="color:rgba(40,42,30,.75)">
+          <li><strong>China & Vietnam</strong> sourcing bases</li>
+          <li><strong>USA & Colombia</strong> market focus</li>
+          <li><strong>Panama</strong> logistics orchestration</li>
+          <li><strong>Egypt</strong> sourcing expansion</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>The thesis</h3>
+        <p>Fintech giants succeeded by replacing branches with logic. We are doing the same for sourcing.</p>
+        <ul class="list">
+          <li>Automating negotiation</li>
+          <li>Vectorizing supply chains</li>
+          <li>Disrupting manual sourcing</li>
+        </ul>
+      </div>
+    </div>
+    <div class="card">
+      <h3>Pre-seed terms (SeedFAST)</h3>
+      <ul class="list">
+        <li><strong>Valuation cap</strong> Ground-floor entry for early believers.</li>
+        <li><strong>20% discount</strong> Guaranteed when the note converts.</li>
+        <li><strong>SeedFAST instrument</strong> Standardised, fast deployment.</li>
+        <li><strong>Status:</strong> Live & filling.</li>
+      </ul>
+    </div>
+    <div class="cards three">
+      <div class="card light"><h3>Income tax relief</h3><p>Claim back up to 30–50% of your investment against your UK income tax bill.</p></div>
+      <div class="card accent"><h3>Tax-free gains</h3><p>Hold shares 3 years and pay zero capital gains tax.</p></div>
+      <div class="card outline light" style="color:var(--olive)"><h3>Loss relief</h3><p>If we fail, claim loss relief on the net amount at your highest tax rate.</p></div>
+    </div>
+    <div class="card light">
+      <h3>Downside protection (example)</h3>
+      <ul class="list" style="color:rgba(40,42,30,.75)">
+        <li><strong>Investment:</strong> GBP 10,000</li>
+        <li><strong>Income tax relief:</strong> - GBP 5,000</li>
+        <li><strong>Loss relief (if value = 0):</strong> - GBP 2,250</li>
+        <li><strong>Real capital at risk:</strong> ~ GBP 2,750 (risk mitigated ~72.5%)</li>
+      </ul>
+      <p style="font-size:.85rem">Example assumes 45% taxpayer using SEIS. Not financial advice.</p>
+    </div>
+  </div>
+</section>
+<footer>
+  <div class="subtitle" style="justify-content:center;color:rgba(253,255,249,.7)">
+    <span style="width:8px;height:8px;border-radius:999px;background:var(--acid);"></span> GENERIC <span style="color:var(--acid)">ALTERNATIVES</span>
+  </div>
+  <p>GENERIC ALTERNATIVES LIMITED (NI735578)</p>
+  <p style="color:rgba(253,255,249,.6);margin:1rem 0">Automation + AI + CRM + Scraping + API workflows</p>
+  <div class="links">
+    <a class="btn outline" style="padding:.6rem 1.5rem;border-color:rgba(253,255,249,.3);color:var(--ivory);text-decoration:none" href="#">Log In</a>
+    <a class="btn primary" style="padding:.6rem 1.5rem;text-decoration:none" href="#">Start sourcing</a>
+  </div>
+  <p style="color:rgba(253,255,249,.4)">© 2025 Generic Alternatives — London / Guangzhou — Systems Confidential</p>
+</footer>
+</main>
+<script>
+const btn=document.getElementById('download');if(btn){btn.addEventListener('click',()=>window.print());}
+document.querySelectorAll('[data-scroll]').forEach(el=>{el.addEventListener('click',()=>{const target=document.querySelector(el.getAttribute('data-scroll'));if(target){target.scrollIntoView({behavior:'smooth'});}});});
+</script>
+</body>
+</html>
