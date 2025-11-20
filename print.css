@@ -1,0 +1,16 @@
+/* Print-specific styles */
+@media print {
+  /* Hide the "Download PDF" button and other unnecessary elements */
+  .no-print {
+    display: none !important;
+  }
+
+  /* Ensure the main content takes up the full width */
+  main {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  /* Add any other print-specific styles here */
+}

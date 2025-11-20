@@ -31,48 +31,54 @@ export const Traction: React.FC = () => {
                 <div className="absolute top-0 right-0 bg-[#d3f54c] text-[#282a1e] px-6 py-2 rounded-bl-2xl font-bold text-lg z-10">
                   Revenue Pipeline
                 </div>
-                <ResponsiveContainer width="100%" height="100%">
-                  <BarChart data={TRACTION_DATA} margin={{ top: 40, right: 10, left: 30, bottom: 30 }}>
-                    <CartesianGrid strokeDasharray="3 3" stroke="#d3f54c" opacity={0.1} vertical={false} />
-                    <XAxis 
-                        dataKey="name" 
-                        stroke="#fdfff9" 
-                        tick={{ fill: '#fdfff9', fontSize: 16, fontWeight: 600 }} 
-                        axisLine={false}
-                        tickLine={false}
-                        dy={20}
-                    />
-                    <YAxis 
-                        stroke="#fdfff9" 
-                        tick={{ fill: '#fdfff9', fontSize: 16, fontWeight: 600 }} 
-                        axisLine={false}
-                        tickLine={false}
-                        tickFormatter={(value) => `$${value}`}
-                        dx={-10}
-                        width={60}
-                    />
-                    <Tooltip 
-                        cursor={{fill: '#d3f54c', opacity: 0.1}}
-                        content={({ active, payload }) => {
-                          if (active && payload && payload.length) {
-                            return (
-                              <div className="bg-[#282a1e] border-2 border-[#d3f54c] p-4 rounded-xl">
-                                <p className="text-[#d3f54c] font-bold text-lg">{payload[0].payload.name}</p>
-                                <p className="text-white text-2xl font-serif">${payload[0].value}</p>
-                                <p className="text-gray-400 text-sm">{payload[0].payload.label}</p>
-                              </div>
-                            );
-                          }
-                          return null;
-                        }}
-                    />
-                    <Bar dataKey="value" radius={[16, 16, 0, 0]} animationDuration={1500}>
-                        {TRACTION_DATA.map((entry, index) => (
-                            <Cell key={`cell-${index}`} fill="#d3f54c" fillOpacity={index === 2 ? 0.6 : 1} stroke="#d3f54c" strokeWidth={2} />
-                        ))}
-                    </Bar>
-                  </BarChart>
-                </ResponsiveContainer>
+                {TRACTION_DATA.length === 0 ? (
+                  <div className="flex items-center justify-center h-full text-[#fdfff9]/70 text-2xl font-medium">
+                    No revenue data available yet.
+                  </div>
+                ) : (
+                  <ResponsiveContainer width="100%" height="100%">
+                    <BarChart data={TRACTION_DATA} margin={{ top: 40, right: 10, left: 30, bottom: 30 }}>
+                      <CartesianGrid strokeDasharray="3 3" stroke="#d3f54c" opacity={0.1} vertical={false} />
+                      <XAxis 
+                          dataKey="name" 
+                          stroke="#fdfff9" 
+                          tick={{ fill: '#fdfff9', fontSize: 16, fontWeight: 600 }} 
+                          axisLine={false}
+                          tickLine={false}
+                          dy={20}
+                      />
+                      <YAxis 
+                          stroke="#fdfff9" 
+                          tick={{ fill: '#fdfff9', fontSize: 16, fontWeight: 600 }} 
+                          axisLine={false}
+                          tickLine={false}
+                          tickFormatter={(value) => `$${value}`}
+                          dx={-10}
+                          width={60}
+                      />
+                      <Tooltip 
+                          cursor={{fill: '#d3f54c', opacity: 0.1}}
+                          content={({ active, payload }) => {
+                            if (active && payload && payload.length) {
+                              return (
+                                <div className="bg-[#282a1e] border-2 border-[#d3f54c] p-4 rounded-xl">
+                                  <p className="text-[#d3f54c] font-bold text-lg">{payload[0].payload.name}</p>
+                                  <p className="text-white text-2xl font-serif">${payload[0].value}</p>
+                                  <p className="text-gray-400 text-sm">{payload[0].payload.label}</p>
+                                </div>
+                              );
+                            }
+                            return null;
+                          }}
+                      />
+                      <Bar dataKey="value" radius={[16, 16, 0, 0]} animationDuration={1500}>
+                          {TRACTION_DATA.map((entry, index) => (
+                              <Cell key={`cell-${index}`} fill="#d3f54c" fillOpacity={index === 2 ? 0.6 : 1} stroke="#d3f54c" strokeWidth={2} />
+                          ))}
+                      </Bar>
+                    </BarChart>
+                  </ResponsiveContainer>
+                )}
              </div>
           </div>
 

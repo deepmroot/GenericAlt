@@ -121,11 +121,7 @@ export const COMPARISON_DATA: ComparisonPoint[] = [
   }
 ];
 
-export const TRACTION_DATA: TractionMetric[] = [
-  { name: 'Client A', value: 2400, label: 'USD Confirmed' },
-  { name: 'Client B', value: 1900, label: 'USD Sourcing' },
-  { name: 'Pipeline', value: 8500, label: 'USD Est. Verbal' },
-];
+export const TRACTION_DATA: TractionMetric[] = [];
 
 export const VERTICALS: VerticalItem[] = [
   { title: "Industrial", items: ["Submersible Pumps", "VFDs", "Industrial Machinery"] },

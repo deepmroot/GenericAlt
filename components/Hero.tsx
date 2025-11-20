@@ -40,11 +40,11 @@ export const Hero: React.FC = () => {
           
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row items-center gap-6">
-             <Button variant="primary">
+             <Button variant="primary" onClick={() => document.getElementById('technology')?.scrollIntoView({ behavior: 'smooth' })}>
                 View Technology
                 <ArrowRight size={24} />
              </Button>
-             <Button variant="outline">
+             <Button variant="outline" onClick={() => document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' })}>
                 <Bot size={24} />
                 Automation Logic
              </Button>

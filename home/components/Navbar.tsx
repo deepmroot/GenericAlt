@@ -1,9 +1,29 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import { ShieldCheck } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { auth } from '../../utils/auth';
 
 export const Navbar: React.FC = () => {
   const scrollContainerRef = useRef<HTMLDivElement>(null);
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const checkAuth = () => {
+      setIsAuthenticated(auth.isAuthenticated());
+    };
+    checkAuth();
+    window.addEventListener('storage', checkAuth);
+    return () => {
+      window.removeEventListener('storage', checkAuth);
+    };
+  }, []);
+
+  const handleLogout = () => {
+    auth.logout();
+    setIsAuthenticated(false);
+    navigate('/');
+  };
 
   const navLinks = [
     { label: 'Invest', badge: 'NEW', href: '/invest' },
@@ -74,10 +94,18 @@ export const Navbar: React.FC = () => {
 
         {/* Actions Island */}
         <div className="pointer-events-auto flex items-center gap-2 bg-olive/90 backdrop-blur-xl border border-white/5 rounded-full p-2 pl-6 shadow-2xl shrink-0">
-          <Link to="/login" className="text-sm font-bold text-ivory hover:text-lime transition-colors mr-2 whitespace-nowrap">Log In</Link>
-          <Link to="/signup" className="bg-lime text-olive rounded-full px-6 py-3 text-sm font-bold hover:bg-white transition-colors shadow-none uppercase tracking-widest whitespace-nowrap">
-            Start Sourcing
-          </Link>
+          {isAuthenticated ? (
+            <button onClick={handleLogout} className="bg-lime text-olive rounded-full px-6 py-3 text-sm font-bold hover:bg-white transition-colors shadow-none uppercase tracking-widest whitespace-nowrap">
+              Logout
+            </button>
+          ) : (
+            <>
+              <Link to="/login" className="text-sm font-bold text-ivory hover:text-lime transition-colors mr-2 whitespace-nowrap">Log In</Link>
+              <Link to="/signup" className="bg-lime text-olive rounded-full px-6 py-3 text-sm font-bold hover:bg-white transition-colors shadow-none uppercase tracking-widest whitespace-nowrap">
+                Start Sourcing
+              </Link>
+            </>
+          )}
         </div>
       </div>
     </nav>

@@ -1,11 +1,31 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Navbar } from './Navbar';
 import { Button } from './ui/Button';
 import { Card } from './ui/Card';
 import { Badge } from './ui/Badge';
 import { ArrowUpRight, ShieldCheck } from 'lucide-react';
+import { auth } from '../../utils/auth';
 
 export const Hero: React.FC = () => {
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [userEmail, setUserEmail] = useState<string | null>(null);
+
+  useEffect(() => {
+    const checkAuth = () => {
+      const authenticated = auth.isAuthenticated();
+      setIsAuthenticated(authenticated);
+      if (authenticated) {
+        const user = auth.getUser();
+        setUserEmail(user?.email || null);
+      }
+    };
+    checkAuth();
+    window.addEventListener('storage', checkAuth);
+    return () => {
+      window.removeEventListener('storage', checkAuth);
+    };
+  }, []);
+
   return (
     <section className="relative min-h-screen pt-64 pb-20 lg:pt-48 lg:pb-32 px-4 lg:px-12 flex flex-col justify-center overflow-hidden">
       <Navbar />
@@ -29,10 +49,21 @@ export const Hero: React.FC = () => {
             without the middleman tax.
           </p>
 
-          <div className="flex flex-wrap gap-6 pt-6">
-            <Button label="Start a project" className="text-lg lg:text-xl px-10 py-6" />
-            <Button label="Explore solutions" variant="outline" icon={false} className="text-lg lg:text-xl px-10 py-6" />
-          </div>
+          {isAuthenticated ? (
+            <div className="pt-6">
+              <h2 className="text-3xl font-bold text-lime mb-4">Welcome, {userEmail}!</h2>
+              <p className="text-xl text-ivory/80 mb-6">Get in touch with us to start your project.</p>
+              <div>
+                <p className="text-lg text-ivory">Email: <a href="mailto:contact@generic-alternatives.com" className="underline">contact@generic-alternatives.com</a></p>
+                <p className="text-lg text-ivory">Phone: +1 (555) 123-4567</p>
+              </div>
+            </div>
+          ) : (
+            <div className="flex flex-wrap gap-6 pt-6">
+              <Button label="Start a project" className="text-lg lg:text-xl px-10 py-6" />
+              <Button label="Explore solutions" variant="outline" icon={false} className="text-lg lg:text-xl px-10 py-6" />
+            </div>
+          )}
         </div>
 
         {/* Right Content - Overlapping/Floating Card */}

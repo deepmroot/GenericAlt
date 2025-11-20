@@ -1,5 +1,5 @@
 
-import React from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { ArrowRight } from 'lucide-react';
 
 interface TimelineItem {
@@ -114,6 +114,40 @@ const RulerSlide: React.FC<{ item: TimelineItem; index: number }> = ({ item, ind
 };
 
 export const TimelineCarousel: React.FC = () => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const carouselRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentIndex((prevIndex) => (prevIndex + 1) % (TIMELINE_DATA.length + 1));
+    }, 5000); // Change slide every 5 seconds
+
+    return () => clearInterval(interval);
+  }, []);
+
+  useEffect(() => {
+    if (carouselRef.current) {
+      const scrollWidth = carouselRef.current.scrollWidth;
+      const clientWidth = carouselRef.current.clientWidth;
+      const itemWidth = scrollWidth / (TIMELINE_DATA.length + 2); // +2 for spacers
+      let scrollPosition = currentIndex * itemWidth;
+
+      if (currentIndex === TIMELINE_DATA.length) {
+        // Special case for "What's Next"
+        scrollPosition = scrollWidth - clientWidth;
+      }
+      
+      if (currentIndex === 0) {
+        scrollPosition = 0;
+      }
+
+      carouselRef.current.scrollTo({
+        left: scrollPosition,
+        behavior: 'smooth',
+      });
+    }
+  }, [currentIndex]);
+
   return (
     <div className="relative pb-12">
       
@@ -170,7 +204,7 @@ export const TimelineCarousel: React.FC = () => {
 
 
       {/* --- DESKTOP LAYOUT (Horizontal Carousel) --- */}
-      <div className="hidden md:flex pt-10 px-6 gap-0 overflow-x-auto snap-x snap-mandatory scroll-smooth pb-8 [&::-webkit-scrollbar]:hidden" style={{ scrollbarWidth: 'none' }}>
+      <div ref={carouselRef} className="hidden md:flex pt-10 px-6 gap-0 overflow-x-auto snap-x snap-mandatory scroll-smooth pb-8 [&::-webkit-scrollbar]:hidden" style={{ scrollbarWidth: 'none' }}>
         
         {/* Spacer for left alignment */}
         <div className="min-w-[5vw] md:min-w-[10vw] shrink-0"></div>
