@@ -5,10 +5,6 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Generic Alternatives | Business Overview</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Manrope:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
     <script>
       tailwind.config = {
         theme: {
@@ -17,6 +13,11 @@
               primary: '#282a1e',
               accent: '#d3f54c',
               offwhite: '#fdfff9',
+              olive: '#282a1e',
+              lime: '#d3f54c',
+              ivory: '#fdfff9',
+              charcoal: '#1a1c14',
+              error: '#ef4444',
             },
             fontFamily: {
               sans: ['Manrope', 'sans-serif'],
@@ -24,9 +25,17 @@
             },
             borderRadius: {
               'custom': '2rem',
+              '4xl': '2rem',
+              '5xl': '2.5rem',
+              '6xl': '3rem',
+              '7xl': '4rem',
             },
             borderWidth: {
               '3': '3px',
+            },
+            fontSize: {
+              '10xl': '10rem',
+              '11xl': '12rem',
             },
             boxShadow: {
               'sharp': '6px 6px 0px 0px #000000',
@@ -39,7 +48,15 @@
           },
         },
       }
+      ::selection {
+        background-color: #d3f54c;
+        color: #282a1e;
+      }
     </script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Manrope:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
       body {
         background-color: #282a1e;
