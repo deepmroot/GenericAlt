@@ -20,6 +20,8 @@ RUN npm install --omit=dev --legacy-peer-deps
 # Copy the compiled frontend and server
 COPY --from=build /app/dist ./dist
 COPY server.js ./server.js
+COPY api ./api
+COPY db ./db
 
 EXPOSE 3000
 CMD ["node", "server.js"]
