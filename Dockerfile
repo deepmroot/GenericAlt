@@ -4,7 +4,7 @@ WORKDIR /app
 
 # Install dependencies and build static assets
 COPY package.json ./
-RUN npm install
+RUN npm install --legacy-peer-deps
 COPY . ./
 RUN npm run build
 
@@ -15,7 +15,7 @@ ENV PORT=3000
 
 # Install only production dependencies
 COPY package.json ./
-RUN npm install --omit=dev
+RUN npm install --omit=dev --legacy-peer-deps
 
 # Copy the compiled frontend and server
 COPY --from=build /app/dist ./dist
