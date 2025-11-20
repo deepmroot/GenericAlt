@@ -14,9 +14,14 @@
         theme: {
           extend: {
             colors: {
+              olive: '#282a1e',
+              lime: '#d3f54c',
+              ivory: '#fdfff9',
+              charcoal: '#1a1c14',
               primary: '#282a1e',
               accent: '#d3f54c',
               offwhite: '#fdfff9',
+              error: '#ef4444',
             },
             fontFamily: {
               sans: ['Manrope', 'sans-serif'],
@@ -24,6 +29,14 @@
             },
             borderRadius: {
               'custom': '2rem',
+              '4xl': '2rem',
+              '5xl': '2.5rem',
+              '6xl': '3rem',
+              '7xl': '4rem',
+            },
+            fontSize: {
+              '10xl': '10rem',
+              '11xl': '12rem',
             },
             borderWidth: {
               '3': '3px',
@@ -45,6 +58,9 @@
         background-color: #282a1e;
         color: #fdfff9;
         font-family: 'Manrope', sans-serif;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        font-size: 18px;
       }
       h1, h2, h3, h4, h5, h6 {
         letter-spacing: -0.02em;
@@ -59,11 +75,16 @@
         height: 10px;
       }
       ::-webkit-scrollbar-track {
-        background: #282a1e; 
+        background: #1a1c14; 
       }
       ::-webkit-scrollbar-thumb {
         background: #d3f54c; 
-        border-radius: 5px;
+        border: 2px solid #1a1c14;
+        border-radius: 9999px;
+      }
+      ::selection {
+        background-color: #d3f54c;
+        color: #282a1e;
       }
     </style>
   <script type="importmap">
