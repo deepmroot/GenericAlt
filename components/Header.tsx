@@ -1,6 +1,6 @@
 
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom'; // Assuming react-router is available or using anchors for single page
+import { Link } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 
 export const Navigation: React.FC = () => {
@@ -16,10 +16,11 @@ export const Navigation: React.FC = () => {
   }, []);
 
   const navLinks = [
-    { name: 'Overview', href: '#overview' },
-    { name: 'Traction', href: '#traction' },
-    { name: 'Technology', href: '#technology' },
-    { name: 'Roadmap', href: '#roadmap' },
+    { name: 'Overview', href: '/invest#overview' },
+    { name: 'Traction', href: '/invest#traction' },
+    { name: 'Technology', href: '/invest#technology' },
+    { name: 'Roadmap', href: '/invest#roadmap' },
+    { name: 'Invest', href: '/invest#invest' }
   ];
 
   return (
@@ -27,7 +28,7 @@ export const Navigation: React.FC = () => {
       <div className={`max-w-7xl mx-auto bg-[#0c0f01]/80 backdrop-blur-xl rounded-full border border-white/10 flex items-center justify-between p-2 pl-8 shadow-2xl transition-all duration-500 pointer-events-auto ${isScrolled ? 'bg-[#0c0f01]/90' : 'bg-[#0c0f01]/60'}`}>
         
         {/* Logo */}
-        <a href="#" className="flex items-center gap-3 group">
+        <Link to="/" className="flex items-center gap-3 group">
            <div className="w-10 h-10 bg-[#d3f54c] rounded-full flex items-center justify-center text-[#282a1e]">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
@@ -39,29 +40,29 @@ export const Navigation: React.FC = () => {
              <span className="font-bold text-lg tracking-wide text-[#fdfff9]">GENERIC</span>
              <span className="text-[#d3f54c] text-xs font-bold tracking-widest uppercase">ALTERNATIVES</span>
            </div>
-        </a>
+        </Link>
 
         {/* Desktop Nav */}
         <nav className="hidden md:flex items-center gap-2">
           {navLinks.map((link) => (
-            <a 
+            <Link
               key={link.name}
-              href={link.href} 
+              to={link.href}
               className="px-6 py-3 rounded-full text-[#f5ffe0] text-base font-medium hover:bg-[#fdfff9]/10 hover:text-white transition-all duration-300"
             >
               {link.name}
-            </a>
+            </Link>
           ))}
         </nav>
 
         {/* Contact Button */}
         <div className="hidden md:block pr-2">
-           <a
-            href="#contact"
+           <Link
+            to="/invest#invest"
             className="bg-[#d3f54c] text-[#0c0f01] text-base font-bold px-8 py-4 rounded-full hover:bg-white hover:scale-105 transition-all duration-300 block"
           >
             Contact Us
-          </a>
+          </Link>
         </div>
 
         {/* Mobile Toggle */}
@@ -77,14 +78,14 @@ export const Navigation: React.FC = () => {
       {mobileOpen && (
         <div className="md:hidden absolute top-full mt-4 left-4 right-4 bg-[#1a1c14] border border-[#d3f54c]/20 rounded-[2rem] p-6 flex flex-col gap-4 shadow-2xl pointer-events-auto">
           {navLinks.map((link) => (
-            <a 
+            <Link
               key={link.name}
-              href={link.href} 
+              to={link.href}
               className="text-[#fdfff9] text-xl font-bold py-4 border-b border-white/5 last:border-0"
               onClick={() => setMobileOpen(false)}
             >
               {link.name}
-            </a>
+            </Link>
           ))}
         </div>
       )}
