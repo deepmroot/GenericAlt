@@ -43,20 +43,22 @@ const port = process.env.PORT || 4173;
 
 // Initialize database and start server
 async function startServer() {
-  try {
-    if (process.env.DATABASE_URL) {
+  // Start server first so health checks can pass
+  app.listen(port, '0.0.0.0', () => {
+    console.log(`Server listening on port ${port}`);
+  });
+
+  // Initialize database in background
+  if (process.env.DATABASE_URL) {
+    try {
       await initializeDatabase();
       console.log('✅ Database ready');
-    } else {
-      console.warn('⚠️  No DATABASE_URL found - auth features will not work');
+    } catch (error) {
+      console.error('❌ Database initialization failed:', error);
+      console.warn('⚠️  Server running but auth features may not work');
     }
-
-    app.listen(port, '0.0.0.0', () => {
-      console.log(`Server listening on port ${port}`);
-    });
-  } catch (error) {
-    console.error('Failed to start server:', error);
-    process.exit(1);
+  } else {
+    console.warn('⚠️  No DATABASE_URL found - auth features will not work');
   }
 }
 
