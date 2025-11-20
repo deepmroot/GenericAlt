@@ -2,10 +2,17 @@
 FROM node:18-alpine AS build
 WORKDIR /app
 
+# Install git so submodules can be fetched when available
+RUN apk add --no-cache git
+
 # Install dependencies and build static assets
 COPY package.json ./
 RUN npm install
 COPY . ./
+
+# Ensure any optional submodules (e.g., GenericAlternativesHome) are initialized when .git is present
+RUN if [ -d .git ]; then git submodule update --init --recursive; fi
+
 RUN npm run build
 
 FROM node:18-alpine
