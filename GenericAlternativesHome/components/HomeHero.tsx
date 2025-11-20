@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { ArrowRight, ShieldCheck, Truck, Warehouse, Zap } from 'lucide-react';
 
 export const HomeHero: React.FC = () => {
@@ -24,12 +25,12 @@ export const HomeHero: React.FC = () => {
               Cut out middlemen, protect your margins, and ship products your customers trust.
             </p>
             <div className="flex flex-wrap gap-4">
-              <button className="px-8 py-4 rounded-full bg-[#d3f54c] text-[#282a1e] font-bold text-xl hover:bg-[#fdfff9] transition flex items-center gap-2">
+              <Link to="/invest" className="px-8 py-4 rounded-full bg-[#d3f54c] text-[#282a1e] font-bold text-xl hover:bg-[#fdfff9] transition flex items-center gap-2">
                 Start a project <ArrowRight size={22} />
-              </button>
-              <button className="px-8 py-4 rounded-full border border-white/20 text-[#fdfff9] font-semibold text-xl hover:border-[#d3f54c] transition flex items-center gap-2">
+              </Link>
+              <Link to="/invest" className="px-8 py-4 rounded-full border border-white/20 text-[#fdfff9] font-semibold text-xl hover:border-[#d3f54c] transition flex items-center gap-2">
                 Explore solutions <Truck size={22} />
-              </button>
+              </Link>
             </div>
             <div className="grid sm:grid-cols-3 gap-4 text-base text-[#d5e0bf] w-full">
               {[{ label: 'Verified factories', value: '250+', icon: ShieldCheck }, { label: 'Average landed savings', value: '18%', icon: Warehouse }, { label: 'On-time deliveries', value: '98.6%', icon: Zap }].map(({ label, value, icon: Icon }) => (
