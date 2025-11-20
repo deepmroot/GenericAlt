@@ -7,15 +7,15 @@ import { ArrowUpRight, ShieldCheck } from 'lucide-react';
 
 export const Hero: React.FC = () => {
   return (
-    <section className="relative min-h-screen pt-32 pb-20 lg:pt-48 lg:pb-32 px-4 lg:px-12 flex flex-col justify-center overflow-hidden">
+    <section className="relative min-h-screen pt-64 pb-20 lg:pt-48 lg:pb-32 px-4 lg:px-12 flex flex-col justify-center overflow-hidden">
       <Navbar />
       {/* Adjusted grid breakpoint to lg:grid-cols-2 to ensure side-by-side on laptops */}
       <div className="max-w-[1920px] mx-auto w-full grid lg:grid-cols-2 gap-8 xl:gap-16 items-center relative z-10">
-        
+
         {/* Left Content */}
         <div className="space-y-10">
           <Badge label="Sovereign Sourcing & Distribution" />
-          
+
           {/* Updated sizes for massive impact */}
           <h1 className="text-7xl sm:text-8xl lg:text-[7rem] xl:text-[9rem] 2xl:text-[11rem] font-bold tracking-tighter leading-[0.85] text-ivory">
             Source smarter. <br />
@@ -24,8 +24,8 @@ export const Hero: React.FC = () => {
           </h1>
 
           <p className="text-xl lg:text-2xl xl:text-3xl text-ivory/70 max-w-2xl leading-relaxed font-light">
-            The sovereign sourcing platform for industrial-grade operators. 
-            Direct factory access, enforced quality, and global distribution power 
+            The sovereign sourcing platform for industrial-grade operators.
+            Direct factory access, enforced quality, and global distribution power
             without the middleman tax.
           </p>
 
@@ -44,7 +44,7 @@ export const Hero: React.FC = () => {
                 Live Network
               </div>
             </div>
-            
+
             <div className="text-sm font-bold uppercase tracking-widest text-olive/60 mb-6">Global Operations View</div>
             <h3 className="text-4xl lg:text-5xl xl:text-6xl font-bold text-olive mb-10 leading-[1.1] tracking-tight">
               "Optimized for high-volume sovereign commerce."

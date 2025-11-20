@@ -4,7 +4,7 @@ import { SERVICES } from '../constants';
 
 export const Services: React.FC = () => {
   return (
-    <section className="py-32 bg-[#fdfff9] rounded-t-[4rem] relative z-10 mt-[-2rem]">
+    <section id="services" className="py-32 bg-[#fdfff9] rounded-t-[4rem] relative z-10 mt-[-2rem]">
       <div className="container mx-auto px-6">
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-20 gap-10">
             <div>

@@ -12,25 +12,34 @@ const InvestPage: React.FC = () => {
   return (
     <div className="min-h-screen bg-[#282a1e] text-[#fdfff9] font-sans selection:bg-[#d3f54c] selection:text-[#282a1e] overflow-x-hidden relative">
       {/* Global Faint Dotted Background Pattern */}
-      <div
-        className="fixed inset-0 z-0 pointer-events-none opacity-[0.03]"
-        style={{
-          backgroundImage: 'radial-gradient(#d3f54c 2px, transparent 2px)',
-          backgroundSize: '40px 40px'
-        }}
-      ></div>
+      <div className="fixed inset-0 z-0 bg-[radial-gradient(#d3f54c_2px,transparent_2px)] bg-[length:60px_60px] opacity-[0.02] pointer-events-none"></div>
 
-      <main className="relative z-10">
-        <Hero />
-        <Services />
-        <Traction />
-        <DeepDive />
-        <PriceBreakdown />
-        <Roadmap />
-        <Raise />
+      <main className="relative z-[10]">
+        <div className="relative z-[10]">
+          <Hero />
+        </div>
+        <div className="relative -mt-20 z-[20]">
+          <Services />
+        </div>
+        <div className="relative -mt-20 z-[30]">
+          <Traction />
+        </div>
+        <div className="relative -mt-20 z-[40]">
+          <DeepDive />
+        </div>
+        <div className="relative -mt-20 z-[50]">
+          <PriceBreakdown />
+        </div>
+        <div className="relative -mt-20 z-[60]">
+          <Roadmap />
+        </div>
+        <div className="relative -mt-20 z-[70]">
+          <Raise />
+        </div>
+        <div className="relative -mt-20 z-[80]">
+          <Footer />
+        </div>
       </main>
-
-      <Footer />
     </div>
   );
 };

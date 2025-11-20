@@ -12,7 +12,7 @@ import { TimelineCarousel } from './TimelineCarousel';
 
 export const DeepDive: React.FC = () => {
   return (
-    <section className="bg-[#282a1e] py-32 md:py-48 relative z-20 border-y-4 border-[#d3f54c] overflow-hidden">
+    <section id="technology" className="bg-[#282a1e] py-32 md:py-48 relative z-20 border-y-4 border-[#d3f54c] overflow-hidden">
       
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-[0.05]" style={{ backgroundImage: 'radial-gradient(#d3f54c 2px, transparent 2px)', backgroundSize: '40px 40px' }}></div>

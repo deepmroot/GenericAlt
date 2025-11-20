@@ -12,26 +12,26 @@ export default function HomePage() {
   return (
     <main className="bg-olive text-ivory min-h-screen selection:bg-lime selection:text-olive">
       <div className="fixed inset-0 z-0 bg-[radial-gradient(#d3f54c_2px,transparent_2px)] bg-[length:60px_60px] opacity-[0.02] pointer-events-none"></div>
-      <div className="relative z-10">
-        <div className="relative z-10">
+      <div className="relative z-[10]">
+        <div className="relative z-[10]">
           <Hero />
         </div>
-        <div className="relative -mt-20 z-20">
+        <div className="relative -mt-20 z-[20]">
           <FeaturesGrid />
         </div>
-        <div className="relative -mt-20 z-30">
+        <div className="relative -mt-20 z-[30]">
           <SecuritySection />
         </div>
-        <div className="relative -mt-20 z-40">
+        <div className="relative -mt-20 z-[40]">
           <Steps />
         </div>
-        <div className="relative -mt-20 z-50">
+        <div className="relative -mt-20 z-[50]">
           <ComparisonSection />
         </div>
-        <div className="relative -mt-20 z-60">
+        <div className="relative -mt-20 z-[60]">
           <BlogSection />
         </div>
-        <div className="relative -mt-20 z-70">
+        <div className="relative -mt-20 z-[70]">
           <Footer />
         </div>
       </div>

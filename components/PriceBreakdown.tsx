@@ -12,7 +12,7 @@ export const PriceBreakdown: React.FC = () => {
   
   return (
     <>
-      <section id="technology" className="pt-32 bg-[#282a1e] relative overflow-hidden">
+      <section id="pricing" className="pt-32 bg-[#282a1e] relative overflow-hidden">
         {/* Grid Background */}
         <div className="absolute inset-0 opacity-[0.05] pointer-events-none" style={{ 
           backgroundImage: 'linear-gradient(#d3f54c 1px, transparent 1px), linear-gradient(90deg, #d3f54c 1px, transparent 1px)', 
