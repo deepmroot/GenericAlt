@@ -15,7 +15,7 @@ const HomePage: React.FC = () => {
         style={{ backgroundImage: 'radial-gradient(#d3f54c 2px, transparent 2px)', backgroundSize: '40px 40px' }}
       />
 
-      <main className="relative z-10 space-y-6 pb-16">
+      <main className="relative z-10 space-y-12 pb-20">
         <HomeHero />
         <FeatureGrid />
         <SecurityAssurance />

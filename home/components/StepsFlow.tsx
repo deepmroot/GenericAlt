@@ -24,55 +24,55 @@ const steps = [
 
 export const StepsFlow: React.FC = () => {
   return (
-    <section className="max-w-6xl mx-auto px-6 py-20 space-y-12">
-      <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+    <section className="max-w-7xl w-full mx-auto px-8 py-24 space-y-14">
+      <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-8">
         <div>
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-white/10 text-xs uppercase tracking-widest text-[#d3f54c]">
+          <div className="inline-flex items-center gap-2 px-5 py-3 rounded-full border border-white/10 text-xs uppercase tracking-widest text-[#d3f54c] bg-white/5">
             how we operate
           </div>
-          <h2 className="mt-3 text-4xl md:text-5xl font-extrabold text-[#fdfff9] tracking-tight leading-tight">
+          <h2 className="mt-4 text-5xl md:text-6xl font-extrabold text-[#fdfff9] tracking-tight leading-tight">
             Built for speed without <span className="serif-accent italic text-[#d3f54c]">losing control</span>.
           </h2>
         </div>
-        <button className="px-7 py-3.5 rounded-full bg-[#d3f54c] text-[#282a1e] font-bold text-lg hover:bg-[#fdfff9] transition flex items-center gap-2">
-          Start sourcing <Sparkle size={18} />
+        <button className="px-8 py-4 rounded-full bg-[#d3f54c] text-[#282a1e] font-bold text-xl hover:bg-[#fdfff9] transition flex items-center gap-2">
+          Start sourcing <Sparkle size={20} />
         </button>
       </div>
 
-      <div className="grid md:grid-cols-3 gap-6">
+      <div className="grid md:grid-cols-3 gap-7">
         {steps.map((step) => (
           <div
             key={step.id}
-            className="bg-[#1a1c14] border border-white/10 rounded-[2rem] p-7 space-y-5 hover:border-[#d3f54c] transition"
+            className="bg-[#1a1c14] border border-white/10 rounded-[2.25rem] p-8 space-y-6 hover:border-[#d3f54c] transition w-full"
           >
             <div className="flex items-center justify-between">
-              <div className="h-12 w-12 rounded-2xl bg-[#d3f54c]/10 text-[#d3f54c] flex items-center justify-center border border-[#d3f54c]/40 text-lg font-bold">
+              <div className="h-14 w-14 min-w-[3.5rem] rounded-2xl bg-[#d3f54c]/10 text-[#d3f54c] flex items-center justify-center border border-[#d3f54c]/40 text-xl font-bold">
                 {step.id}
               </div>
-              <div className="px-3 py-1 rounded-full border border-[#d3f54c]/60 text-[#d3f54c] text-xs uppercase tracking-widest">
+              <div className="px-4 py-1.5 rounded-full border border-[#d3f54c]/60 text-[#d3f54c] text-xs uppercase tracking-widest">
                 {step.badge}
               </div>
             </div>
-            <h3 className="text-xl font-bold text-[#fdfff9]">{step.title}</h3>
-            <p className="text-base text-[#d5e0bf] leading-relaxed">{step.body}</p>
-            <button className="inline-flex items-center gap-2 text-[#d3f54c] font-semibold">
-              Continue <ArrowRight size={16} />
+            <h3 className="text-2xl font-bold text-[#fdfff9]">{step.title}</h3>
+            <p className="text-lg text-[#d5e0bf] leading-relaxed">{step.body}</p>
+            <button className="inline-flex items-center gap-2 text-[#d3f54c] font-semibold text-base">
+              Continue <ArrowRight size={18} />
             </button>
           </div>
         ))}
       </div>
 
-      <div className="bg-[#fdfff9] text-[#1a1c14] rounded-[2rem] border border-[#d3f54c]/40 p-6 flex flex-wrap items-center justify-between gap-4">
+      <div className="bg-[#fdfff9] text-[#1a1c14] rounded-[2.25rem] border border-[#d3f54c]/40 p-8 flex flex-wrap items-center justify-between gap-4">
         <div className="flex items-center gap-3">
           <div className="h-11 w-11 rounded-full bg-[#282a1e] text-[#d3f54c] flex items-center justify-center">
             <ClipboardList size={18} />
           </div>
           <div>
             <p className="text-xs uppercase tracking-widest text-[#6b6f5c]">For brands & operators</p>
-            <p className="text-lg font-semibold">We prioritize revenue-generating teams moving physical goods.</p>
+            <p className="text-xl font-semibold">We prioritize revenue-generating teams moving physical goods.</p>
           </div>
         </div>
-        <button className="px-5 py-3 rounded-full border border-[#1a1c14] text-[#1a1c14] font-semibold hover:border-[#d3f54c] hover:text-[#d3f54c] transition">
+        <button className="px-6 py-3.5 rounded-full border border-[#1a1c14] text-[#1a1c14] font-semibold text-lg hover:border-[#d3f54c] hover:text-[#d3f54c] transition">
           Apply now
         </button>
       </div>

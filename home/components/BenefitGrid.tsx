@@ -22,39 +22,39 @@ const perks = [
 
 export const BenefitGrid: React.FC = () => {
   return (
-    <section className="max-w-6xl mx-auto px-6 py-20 space-y-12">
-      <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
-        <div className="space-y-3">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-white/10 text-xs uppercase tracking-widest text-[#d3f54c]">
+    <section className="max-w-7xl w-full mx-auto px-8 py-24 space-y-14">
+      <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-8">
+        <div className="space-y-4">
+          <div className="inline-flex items-center gap-2 px-5 py-3 rounded-full border border-white/10 text-xs uppercase tracking-widest text-[#d3f54c] bg-white/5">
             sourcing benefits
           </div>
-          <h2 className="text-4xl md:text-5xl font-extrabold text-[#fdfff9] tracking-tight leading-tight">
+          <h2 className="text-5xl md:text-6xl font-extrabold text-[#fdfff9] tracking-tight leading-tight">
             Sourced with care, <span className="serif-accent italic text-[#d3f54c]">delivered with precision</span>.
           </h2>
         </div>
-        <button className="px-7 py-3.5 rounded-full bg-[#d3f54c] text-[#282a1e] font-bold text-lg hover:bg-[#fdfff9] transition flex items-center gap-2">
-          View sourcing playbook <ArrowRight size={18} />
+        <button className="px-8 py-4 rounded-full bg-[#d3f54c] text-[#282a1e] font-bold text-xl hover:bg-[#fdfff9] transition flex items-center gap-2">
+          View sourcing playbook <ArrowRight size={20} />
         </button>
       </div>
 
-      <div className="grid md:grid-cols-2 gap-4">
+      <div className="grid md:grid-cols-2 gap-6">
         {perks.map((perk) => (
           <div
             key={perk.title}
-            className="bg-[#1a1c14] border border-white/10 rounded-[2rem] p-7 space-y-4 hover:border-[#d3f54c] transition"
+            className="bg-[#1a1c14] border border-white/10 rounded-[2.25rem] p-8 space-y-5 hover:border-[#d3f54c] transition w-full"
           >
             <div className="flex items-center gap-3">
-              <div className="h-10 w-10 rounded-2xl bg-[#d3f54c]/10 text-[#d3f54c] flex items-center justify-center border border-[#d3f54c]/40">
-                <Sparkles size={18} />
+              <div className="h-11 w-11 rounded-2xl bg-[#d3f54c]/10 text-[#d3f54c] flex items-center justify-center border border-[#d3f54c]/40">
+                <Sparkles size={20} />
               </div>
-              <h3 className="text-lg font-bold text-[#fdfff9]">{perk.title}</h3>
+              <h3 className="text-2xl font-bold text-[#fdfff9]">{perk.title}</h3>
             </div>
-            <p className="text-base text-[#d5e0bf] leading-relaxed">{perk.detail}</p>
+            <p className="text-lg text-[#d5e0bf] leading-relaxed">{perk.detail}</p>
           </div>
         ))}
       </div>
 
-      <div className="bg-[#fdfff9] text-[#1a1c14] rounded-[2rem] border border-[#d3f54c]/40 p-7 grid sm:grid-cols-3 gap-4 shadow-sharp-white">
+      <div className="bg-[#fdfff9] text-[#1a1c14] rounded-[2.25rem] border border-[#d3f54c]/40 p-8 grid sm:grid-cols-3 gap-5 shadow-sharp-white w-full">
         <div className="flex items-center gap-3">
           <div className="h-12 w-12 rounded-2xl bg-[#282a1e] text-[#d3f54c] flex items-center justify-center">
             <Factory size={20} />
