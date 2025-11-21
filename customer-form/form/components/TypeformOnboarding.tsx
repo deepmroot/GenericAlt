@@ -357,7 +357,7 @@ export const TypeformOnboarding: React.FC = () => {
       if (!canProceed) return;
 
       if (current.submitLabel === 'Submit Request') { 
-        const endpoint = (import.meta as any)?.env?.N8N_FORM || (process as any)?.env?.N8N_FORM; 
+        const endpoint = (import.meta as any)?.env?.N8N_FORM || (typeof process !== 'undefined' ? (process as any)?.env?.N8N_FORM : undefined); 
         if (endpoint) { 
           fetch(endpoint, { 
             method: 'POST', 
@@ -464,7 +464,7 @@ export const TypeformOnboarding: React.FC = () => {
              <button 
                onClick={() => {
                  if (current.submitLabel === 'Submit Request') {
-                  const endpoint = (import.meta as any)?.env?.N8N_FORM || (process as any)?.env?.N8N_FORM;
+                  const endpoint = (import.meta as any)?.env?.N8N_FORM || (typeof process !== 'undefined' ? (process as any)?.env?.N8N_FORM : undefined);
                   if (endpoint) {
                     fetch(endpoint, {
                       method: 'POST',
