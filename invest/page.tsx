@@ -6,7 +6,7 @@ import { PriceBreakdown } from '../components/PriceBreakdown';
 import { DeepDive } from '../components/DeepDive';
 import { Roadmap } from '../components/Roadmap';
 import { Raise } from '../components/Raise';
-import { Footer } from '../components/Footer';
+import { Footer } from '../home/components/Footer';
 import jsPDF from 'jspdf';
 import html2canvas from 'html2canvas';
 import Button from '../components/Button';

@@ -1,4 +1,5 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Card } from './ui/Card';
 import { Button } from './ui/Button';
 import { ShieldCheck, Plane, Box, X, Check, Factory, Truck, Anchor, AlertCircle, Home } from 'lucide-react';
@@ -27,6 +28,7 @@ export const ComparisonSection: React.FC = () => {
     }
   ];
 
+  const navigate = useNavigate();
   return (
     <section id="partners" className="bg-olive pt-32 pb-32 px-4 lg:px-12 relative overflow-hidden rounded-t-[4rem] shadow-[0_-40px_80px_rgba(0,0,0,0.3)] -mt-20 z-50">
       {/* Background gradient */}
@@ -66,7 +68,7 @@ export const ComparisonSection: React.FC = () => {
                 </div>
               </div>
 
-              <Button label="Get started now" className="w-full sm:w-auto text-lg py-4" />
+              <Button label="Get started now" className="w-full sm:w-auto text-lg py-4" onClick={() => navigate('/form')} />
             </div>
 
             {/* Comparison Widget (Visual) */}

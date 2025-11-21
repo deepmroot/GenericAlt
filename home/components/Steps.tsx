@@ -1,4 +1,5 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Card } from './ui/Card';
 import { Badge } from './ui/Badge';
 import { Button } from './ui/Button';
@@ -38,6 +39,7 @@ export const Steps: React.FC = () => {
     "Built for growth and scalability"
   ];
 
+  const navigate = useNavigate();
   return (
     <section id="process" className="py-32 px-4 lg:px-12 bg-charcoal relative rounded-t-[4rem] shadow-[0_-40px_80px_rgba(0,0,0,0.3)] overflow-hidden">
       
@@ -97,7 +99,7 @@ export const Steps: React.FC = () => {
                     Transparency, communication, and trust are our core pillars reflected in everything we do.
                 </p>
                 <div className="flex">
-                    <Button label="Work with us" className="!px-12 !py-6 text-xl" />
+                    <Button label="Work with us" className="!px-12 !py-6 text-xl" onClick={() => navigate('/form')} />
                 </div>
              </div>
 

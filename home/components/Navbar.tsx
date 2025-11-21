@@ -51,7 +51,7 @@ export const Navbar: React.FC = () => {
           <div className="w-10 h-10 bg-lime rounded-full flex items-center justify-center text-olive shadow-[0_0_15px_rgba(211,245,76,0.4)]">
             <ShieldCheck size={24} strokeWidth={2.5} />
           </div>
-          <span className="font-bold tracking-tight text-ivory text-xl">GENERIC<span className="text-black font-serif italic px-1.5 py-0.5 bg-white ml-1.5">ALT</span></span>
+          <span className="font-bold tracking-tight text-ivory text-xl">GENERIC <span className="text-black font-serif italic px-1.5 py-0.5 bg-white ml-1.5">ALTERNATIVES</span></span>
         </div>
 
         {/* Navigation Island - Scrollable, shrinks to fit */}

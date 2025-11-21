@@ -30,7 +30,7 @@ export const Footer: React.FC = () => {
                         <div className="w-12 h-12 bg-olive rounded-full flex items-center justify-center text-lime">
                             <ShieldCheck size={24} strokeWidth={2.5} />
                         </div>
-                        <span className="font-bold tracking-tight text-olive text-3xl">GENERIC<span className="text-lime font-serif italic px-1 bg-olive ml-1 rounded-sm">ALT</span></span>
+                        <span className="font-bold tracking-tight text-olive text-3xl">GENERIC <span className="text-lime font-serif italic px-1 bg-olive ml-1 rounded-sm">ALTERNATIVES</span></span>
                     </div>
                     <div className="text-olive/40 text-sm font-bold">
                         © 2024 Generic Alternatives Inc.
@@ -52,7 +52,7 @@ export const Footer: React.FC = () => {
                 {/* Action Buttons */}
                 <div className="flex flex-col sm:flex-row items-center gap-6 shrink-0">
                     <Link to="/login" className="text-sm font-bold text-olive hover:text-olive/70 transition-colors whitespace-nowrap uppercase tracking-widest">Log In</Link>
-                    <Link to="/signup" className="bg-olive text-lime rounded-full px-8 py-4 text-sm font-bold hover:bg-lime hover:text-olive transition-colors uppercase tracking-widest whitespace-nowrap">
+                    <Link to="/form" className="bg-olive text-lime rounded-full px-8 py-4 text-sm font-bold hover:bg-lime hover:text-olive transition-colors uppercase tracking-widest whitespace-nowrap">
                         Start Sourcing
                     </Link>
                 </div>
@@ -60,7 +60,7 @@ export const Footer: React.FC = () => {
 
             {/* Massive Watermark */}
             <div className="hidden 2xl:block absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-[40%] pointer-events-none select-none opacity-[0.03]">
-                <span className="text-[15rem] font-bold text-olive tracking-tighter whitespace-nowrap">GENERIC ALT</span>
+                <span className="text-[15rem] font-bold text-olive tracking-tighter whitespace-nowrap">GENERIC ALTERNATIVES</span>
             </div>
         </footer>
     );

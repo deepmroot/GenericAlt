@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Navbar } from './Navbar';
 import { Button } from './ui/Button';
 import { Card } from './ui/Card';
@@ -26,6 +27,7 @@ export const Hero: React.FC = () => {
     };
   }, []);
 
+  const navigate = useNavigate();
   return (
     <section className="relative min-h-screen pt-64 pb-20 lg:pt-48 lg:pb-32 px-4 lg:px-12 flex flex-col justify-center overflow-hidden">
       <Navbar />
@@ -60,7 +62,7 @@ export const Hero: React.FC = () => {
             </div>
           ) : (
             <div className="flex flex-wrap gap-6 pt-6">
-              <Button label="Start a project" className="text-lg lg:text-xl px-10 py-6" />
+              <Button label="Start a project" className="text-lg lg:text-xl px-10 py-6" onClick={() => navigate('/form')} />
               <Button label="Explore solutions" variant="outline" icon={false} className="text-lg lg:text-xl px-10 py-6" />
             </div>
           )}
