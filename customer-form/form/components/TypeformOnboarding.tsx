@@ -297,7 +297,67 @@ const Steps: StepSpec[] = [
     id: 15,
     title: "You're all set!",
     description: 'We have received your request. We will be reaching out to you on WhatsApp shortly to finalize your sourcing details.',
-    render: () => null,
+    render: () => (
+      <div className="flex flex-col gap-4 mt-8 w-full max-w-md animate-slide-up-in">
+         <button className="text-left w-full p-8 rounded-[2rem] bg-[#d3f54c] text-[#282a1e] hover:scale-[1.02] active:scale-95 transition-all duration-300 group relative overflow-hidden">
+             <div className="relative z-10">
+                <div className="flex items-center gap-2 mb-2">
+                   <div className="w-2 h-2 bg-[#282a1e] rounded-full animate-pulse" />
+                   <span className="font-mono text-[10px] uppercase tracking-widest font-bold opacity-80">Announcement</span>
+                </div>
+                <div className="text-3xl font-bold tracking-tighter mb-1">NEW: WE'RE RAISING!</div>
+                <div className="font-medium opacity-80">Join our growth journey</div>
+             </div>
+             <div className="absolute top-8 right-8 opacity-50 group-hover:opacity-100 transition-opacity">
+                <ArrowRight size={24} className="-rotate-45" />
+             </div>
+             <div className="absolute inset-0 opacity-10 pointer-events-none" style={{ backgroundImage: 'radial-gradient(#282a1e 1px, transparent 1px)', backgroundSize: '8px 8px' }}></div>
+         </button>
+
+         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <a href="/blogs" className="block p-6 rounded-[2rem] border-2 border-[#fdfff9]/10 hover:border-[#d3f54c] hover:bg-[#282a1e] transition-all duration-300 group relative overflow-hidden">
+               <div className="relative z-10">
+                 <div className="font-mono text-[10px] uppercase tracking-widest text-[#fdfff9]/40 mb-4 group-hover:text-[#d3f54c] transition-colors">Resources</div>
+                 <div className="text-xl font-bold mb-1">Read Blogs</div>
+                 <div className="text-sm text-[#fdfff9]/60 group-hover:text-[#fdfff9] transition-colors">Latest insights</div>
+               </div>
+                <div className="absolute bottom-6 right-6 opacity-0 group-hover:opacity-100 -translate-x-4 group-hover:translate-x-0 transition-all duration-300 text-[#d3f54c]">
+                  <ArrowRight size={20} />
+                </div>
+            </a>
+            <a href="/invest" className="block p-6 rounded-[2rem] border-2 border-[#fdfff9]/10 hover:border-[#d3f54c] hover:bg-[#282a1e] transition-all duration-300 group relative overflow-hidden">
+               <div className="relative z-10">
+                 <div className="font-mono text-[10px] uppercase tracking-widest text-[#fdfff9]/40 mb-4 group-hover:text-[#d3f54c] transition-colors">Raise</div>
+                 <div className="text-xl font-bold mb-1">Invest Page</div>
+                 <div className="text-sm text-[#fdfff9]/60 group-hover:text-[#fdfff9] transition-colors">Pitch deck / details</div>
+               </div>
+               <div className="absolute bottom-6 right-6 opacity-0 group-hover:opacity-100 -translate-x-4 group-hover:translate-x-0 transition-all duration-300 text-[#d3f54c]">
+                  <ArrowRight size={20} />
+                </div>
+            </a>
+            <a href="/" className="block p-6 rounded-[2rem] border-2 border-[#fdfff9]/10 hover:border-[#d3f54c] hover:bg-[#282a1e] transition-all duration-300 group relative overflow-hidden">
+               <div className="relative z-10">
+                 <div className="font-mono text-[10px] uppercase tracking-widest text-[#fdfff9]/40 mb-4 group-hover:text-[#d3f54c] transition-colors">Navigation</div>
+                 <div className="text-xl font-bold mb-1">Return Home</div>
+                 <div className="text-sm text-[#fdfff9]/60 group-hover:text-[#fdfff9] transition-colors">Back to start</div>
+               </div>
+               <div className="absolute bottom-6 right-6 opacity-0 group-hover:opacity-100 -translate-x-4 group-hover:translate-x-0 transition-all duration-300 text-[#d3f54c]">
+                  <ArrowRight size={20} />
+                </div>
+            </a>
+            <a href="/blogs" className="block p-6 rounded-[2rem] border-2 border-[#fdfff9]/10 hover:border-[#d3f54c] hover:bg-[#282a1e] transition-all duration-300 group relative overflow-hidden">
+               <div className="relative z-10">
+                 <div className="font-mono text-[10px] uppercase tracking-widest text-[#fdfff9]/40 mb-4 group-hover:text-[#d3f54c] transition-colors">Resources</div>
+                 <div className="text-xl font-bold mb-1">More Blogs</div>
+                 <div className="text-sm text-[#fdfff9]/60 group-hover:text-[#fdfff9] transition-colors">Explore articles</div>
+               </div>
+               <div className="absolute bottom-6 right-6 opacity-0 group-hover:opacity-100 -translate-x-4 group-hover:translate-x-0 transition-all duration-300 text-[#d3f54c]">
+                  <ArrowRight size={20} />
+                </div>
+            </a>
+         </div>
+      </div>
+    ),
     isInformational: true
   }
 ];
