@@ -802,7 +802,7 @@ export const TypeformOnboarding: React.FC<{ flowType?: 'partner' | 'customer' }>
                   onClick={() => {
                     const isFinalAction = (flowType === 'partner' && current.id === 6) || (flowType === 'customer' && current.submitLabel === 'Submit Request');
                     if (isFinalAction) {
-                      const endpoint = (import.meta as any)?.env?.N8N_FORM || (typeof process !== 'undefined' ? (process as any)?.env?.N8N_FORM : undefined);
+                      const endpoint = (import.meta as any)?.env?.VITE_N8N_FORM; console.log('[Partner Submit] endpoint', endpoint);
                       if (endpoint) {
                         fetch(endpoint, {
                           method: 'POST',
