@@ -5,7 +5,7 @@ import InvestPage from './invest/page';
 import AgentsPage from './home/AgentsPage';
 import LoginPage from './auth/LoginPage';
 import SignupPage from './auth/SignupPage';
-import FormPage from './form/form/page';
+import FormPage from './partner-form/form/page';
 import PartnerFormPage from './partner-form/form/page';
 
 const App: React.FC = () => {
