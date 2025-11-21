@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Generic Alternatives</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Manrope:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            olive: {
+              DEFAULT: '#282a1e',
+              dark: '#1a1c14',
+            },
+            lime: {
+              DEFAULT: '#d3f54c',
+            },
+            ivory: {
+              DEFAULT: '#fdfff9',
+            },
+            red: {
+              DEFAULT: '#ef4444',
+            }
+          },
+          fontFamily: {
+            sans: ['Manrope', 'sans-serif'],
+            serif: ['DM Serif Display', 'serif'],
+            mono: ['monospace'],
+          },
+          backgroundImage: {
+            'noise': 'radial-gradient(#d3f54c 2px, transparent 2px)',
+          },
+          animation: {
+            'slide-up-in': 'slideUpIn 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) forwards',
+            'slide-up-out': 'slideUpOut 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) forwards',
+            'slide-down-in': 'slideDownIn 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) forwards',
+            'slide-down-out': 'slideDownOut 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) forwards',
+            'fade-in': 'fadeIn 0.6s ease-out forwards',
+            'shake': 'shake 0.5s cubic-bezier(.36,.07,.19,.97) both',
+          },
+          keyframes: {
+            slideUpIn: {
+              '0%': { transform: 'translateY(120vh) scale(0.9) rotate(4deg)' },
+              '100%': { transform: 'translateY(0) scale(1) rotate(0deg)' },
+            },
+            slideUpOut: {
+              '0%': { transform: 'translateY(0) scale(1) rotate(0deg)' },
+              '100%': { transform: 'translateY(-120vh) scale(0.9) rotate(-4deg)' },
+            },
+            slideDownIn: {
+              '0%': { transform: 'translateY(-120vh) scale(0.9) rotate(-4deg)' },
+              '100%': { transform: 'translateY(0) scale(1) rotate(0deg)' },
+            },
+            slideDownOut: {
+              '0%': { transform: 'translateY(0) scale(1) rotate(0deg)' },
+              '100%': { transform: 'translateY(120vh) scale(0.9) rotate(4deg)' },
+            },
+            fadeIn: {
+              '0%': { opacity: '0' },
+              '100%': { opacity: '1' },
+            },
+            shake: {
+              '10%, 90%': { transform: 'translate3d(-1px, 0, 0)' },
+              '20%, 80%': { transform: 'translate3d(2px, 0, 0)' },
+              '30%, 50%, 70%': { transform: 'translate3d(-4px, 0, 0)' },
+              '40%, 60%': { transform: 'translate3d(4px, 0, 0)' }
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body {
+      background-color: #282a1e;
+      color: #fdfff9;
+      font-family: 'Manrope', sans-serif;
+    }
+    .serif-accent {
+      font-family: 'DM Serif Display', serif;
+      font-style: italic;
+    }
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+  </style>
+<script type="importmap">
+{
+  "imports": {
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.554.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "clsx": "https://aistudiocdn.com/clsx@^2.1.1"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+<body>
+  <div id="root"></div>
+<script type="module" src="/index.tsx"></script>
+</body>
+</html>
