@@ -7,7 +7,7 @@ import LoginPage from './auth/LoginPage';
 import SignupPage from './auth/SignupPage';
 
 import PartnerFormPage from './partner-form/form/page';
-import CustomerFormPage from './form/form/page';
+import CustomerFormPage from './customer-form/form/page';
 
 const App: React.FC = () => {
   return (
