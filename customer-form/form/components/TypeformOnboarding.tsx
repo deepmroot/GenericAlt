@@ -357,7 +357,30 @@ export const TypeformOnboarding: React.FC = () => {
       if (!canProceed) return;
 
       if (current.submitLabel === 'Submit Request') { 
-        console.log('Submitting onboarding data', data); 
+        const endpoint = (import.meta as any)?.env?.N8N_FORM || (process as any)?.env?.N8N_FORM; 
+        if (endpoint) { 
+          fetch(endpoint, { 
+            method: 'POST', 
+            headers: { 'Content-Type': 'application/json' }, 
+            body: JSON.stringify({ body: { 
+              flowType: 'customer', 
+              firstName: data.firstName, 
+              lastName: data.lastName, 
+              email: data.email, 
+              whatsapp: data.whatsapp, 
+              website: data.website, 
+              country: data.country, 
+              brandName: data.brandName, 
+              budget: data.budget, 
+              timeline: data.timeline, 
+              orderVolume: data.orderVolume, 
+              expectedOrderSize: data.expectedOrderSize, 
+              experience: data.experience, 
+              whatSell: data.whatSell, 
+              whatSource: data.whatSource 
+            }}) 
+          }).catch(err => console.error('Submit failed', err)); 
+        } 
         next(); 
       } else { 
         next(); 
@@ -440,7 +463,32 @@ export const TypeformOnboarding: React.FC = () => {
            {current.id < 15 && (
              <button 
                onClick={() => {
-                 if (current.submitLabel === 'Submit Request') console.log(data);
+                 if (current.submitLabel === 'Submit Request') {
+                  const endpoint = (import.meta as any)?.env?.N8N_FORM || (process as any)?.env?.N8N_FORM;
+                  if (endpoint) {
+                    fetch(endpoint, {
+                      method: 'POST',
+                      headers: { 'Content-Type': 'application/json' },
+                      body: JSON.stringify({ body: {
+                        flowType: 'customer',
+                        firstName: data.firstName,
+                        lastName: data.lastName,
+                        email: data.email,
+                        whatsapp: data.whatsapp,
+                        website: data.website,
+                        country: data.country,
+                        brandName: data.brandName,
+                        budget: data.budget,
+                        timeline: data.timeline,
+                        orderVolume: data.orderVolume,
+                        expectedOrderSize: data.expectedOrderSize,
+                        experience: data.experience,
+                        whatSell: data.whatSell,
+                        whatSource: data.whatSource
+                      }})
+                    }).catch(err => console.error('Submit failed', err));
+                  }
+                }
                  next();
                }}
                disabled={!canProceed}

@@ -799,7 +799,39 @@ export const TypeformOnboarding: React.FC<{ flowType?: 'partner' | 'customer' }>
               
               {current.id < Steps.length && (
                 <button 
-                  onClick={next}
+                  onClick={() => {
+                    const isFinalAction = (flowType === 'partner' && current.id === 6) || (flowType === 'customer' && current.submitLabel === 'Submit Request');
+                    if (isFinalAction) {
+                      const endpoint = (import.meta as any)?.env?.N8N_FORM || (process as any)?.env?.N8N_FORM;
+                      if (endpoint) {
+                        fetch(endpoint, {
+                          method: 'POST',
+                          headers: { 'Content-Type': 'application/json' },
+                          body: JSON.stringify({ body: {
+                            flowType: flowType,
+                            companyName: data.companyName,
+                            brandName: data.companyName || data.brandName,
+                            role: data.role,
+                            businessType: data.businessType,
+                            businessDescription: data.businessDescription,
+                            clientRevenue: data.clientRevenue,
+                            partnershipVision: data.partnershipVision,
+                            valueAdd: data.valueAdd,
+                            firstName: data.firstName,
+                            lastName: data.lastName,
+                            email: data.email,
+                            whatsapp: data.whatsapp,
+                            website: data.website,
+                            country: data.country || '',
+                            referralSource: data.referralSource,
+                            budget: data.budget || '',
+                            timeline: data.timeline || ''
+                          }})
+                        }).catch(err => console.error('Partner submit failed', err));
+                      }
+                    }
+                    next();
+                  }}
                   className={clsx(
                     "h-16 px-10 rounded-full font-bold tracking-wide text-base flex items-center gap-4 transition-all duration-300 group",
                     "bg-[#d3f54c] hover:bg-[#fdfff9] text-[#282a1e] hover:scale-105"
