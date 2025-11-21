@@ -7,6 +7,7 @@ import LoginPage from './auth/LoginPage';
 import SignupPage from './auth/SignupPage';
 
 import PartnerFormPage from './partner-form/form/page';
+import CustomerFormPage from './form/form/page';
 
 const App: React.FC = () => {
   return (
@@ -19,7 +20,7 @@ const App: React.FC = () => {
         <Route path="/login" element={<LoginPage />} />
         <Route path="/signup" element={<SignupPage />} />
         <Route path="/partner-form" element={<PartnerFormPage />} />
-        <Route path="/form" element={<PartnerFormPage />} />
+        <Route path="/form" element={<CustomerFormPage />} />
       </Routes>
     </Router>
   );
