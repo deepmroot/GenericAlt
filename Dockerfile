@@ -6,8 +6,7 @@ WORKDIR /app
 COPY package.json ./
 RUN npm install --legacy-peer-deps
 COPY . ./
-# Ensure submodules (e.g., form/) are fetched for build
-RUN git submodule update --init --recursive || true
+
 RUN npm run build
 
 FROM node:18-alpine
