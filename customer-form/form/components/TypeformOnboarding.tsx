@@ -325,31 +325,11 @@ const Steps: StepSpec[] = [
                   <ArrowRight size={20} />
                 </div>
             </a>
-            <a href="/invest" className="block p-6 rounded-[2rem] border-2 border-[#fdfff9]/10 hover:border-[#d3f54c] hover:bg-[#282a1e] transition-all duration-300 group relative overflow-hidden">
-               <div className="relative z-10">
-                 <div className="font-mono text-[10px] uppercase tracking-widest text-[#fdfff9]/40 mb-4 group-hover:text-[#d3f54c] transition-colors">Raise</div>
-                 <div className="text-xl font-bold mb-1">Invest Page</div>
-                 <div className="text-sm text-[#fdfff9]/60 group-hover:text-[#fdfff9] transition-colors">Pitch deck / details</div>
-               </div>
-               <div className="absolute bottom-6 right-6 opacity-0 group-hover:opacity-100 -translate-x-4 group-hover:translate-x-0 transition-all duration-300 text-[#d3f54c]">
-                  <ArrowRight size={20} />
-                </div>
-            </a>
             <a href="/" className="block p-6 rounded-[2rem] border-2 border-[#fdfff9]/10 hover:border-[#d3f54c] hover:bg-[#282a1e] transition-all duration-300 group relative overflow-hidden">
                <div className="relative z-10">
                  <div className="font-mono text-[10px] uppercase tracking-widest text-[#fdfff9]/40 mb-4 group-hover:text-[#d3f54c] transition-colors">Navigation</div>
                  <div className="text-xl font-bold mb-1">Return Home</div>
                  <div className="text-sm text-[#fdfff9]/60 group-hover:text-[#fdfff9] transition-colors">Back to start</div>
-               </div>
-               <div className="absolute bottom-6 right-6 opacity-0 group-hover:opacity-100 -translate-x-4 group-hover:translate-x-0 transition-all duration-300 text-[#d3f54c]">
-                  <ArrowRight size={20} />
-                </div>
-            </a>
-            <a href="/blogs" className="block p-6 rounded-[2rem] border-2 border-[#fdfff9]/10 hover:border-[#d3f54c] hover:bg-[#282a1e] transition-all duration-300 group relative overflow-hidden">
-               <div className="relative z-10">
-                 <div className="font-mono text-[10px] uppercase tracking-widest text-[#fdfff9]/40 mb-4 group-hover:text-[#d3f54c] transition-colors">Resources</div>
-                 <div className="text-xl font-bold mb-1">More Blogs</div>
-                 <div className="text-sm text-[#fdfff9]/60 group-hover:text-[#fdfff9] transition-colors">Explore articles</div>
                </div>
                <div className="absolute bottom-6 right-6 opacity-0 group-hover:opacity-100 -translate-x-4 group-hover:translate-x-0 transition-all duration-300 text-[#d3f54c]">
                   <ArrowRight size={20} />

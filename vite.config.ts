@@ -13,7 +13,8 @@ export default defineConfig(({ mode }) => {
       define: {
         'process.env.API_KEY': JSON.stringify(env.GEMINI_API_KEY),
         'process.env.GEMINI_API_KEY': JSON.stringify(env.GEMINI_API_KEY),
-        'process.env.N8N_FORM': JSON.stringify(env.N8N_FORM)
+        'process.env.N8N_FORM': JSON.stringify(env.N8N_FORM),
+        'import.meta.env.VITE_N8N_FORM': JSON.stringify(env.VITE_N8N_FORM)
       },
       resolve: {
         alias: {
