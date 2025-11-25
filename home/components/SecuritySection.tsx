@@ -233,11 +233,7 @@ export const SecuritySection: React.FC = () => {
                                 <div className="w-10 h-10 rounded-full bg-ivory border-2 border-lime"></div>
                                 <div className="w-10 h-10 rounded-full bg-charcoal border-2 border-lime"></div>
                              </div>
-                             <div className="text-xs font-bold uppercase tracking-widest">+400 Brands</div>
                         </div>
-                        <button className="w-full sm:w-auto bg-olive text-lime px-8 py-4 rounded-full font-bold tracking-wide uppercase text-sm hover:bg-white hover:text-olive transition-colors flex items-center justify-center gap-2 shadow-xl">
-                            View All Stories <ArrowRight size={16} />
-                        </button>
                     </div>
                 </div>
 
