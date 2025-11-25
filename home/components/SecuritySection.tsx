@@ -228,11 +228,6 @@ export const SecuritySection: React.FC = () => {
 
                     <div className="relative z-10 flex flex-col sm:flex-row items-center gap-6 w-full lg:w-auto justify-end">
                         <div className="flex items-center gap-2 opacity-60">
-                             <div className="flex -space-x-3">
-                                <div className="w-10 h-10 rounded-full bg-charcoal border-2 border-lime"></div>
-                                <div className="w-10 h-10 rounded-full bg-ivory border-2 border-lime"></div>
-                                <div className="w-10 h-10 rounded-full bg-charcoal border-2 border-lime"></div>
-                             </div>
                         </div>
                     </div>
                 </div>
